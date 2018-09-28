@@ -1,0 +1,20 @@
+{
+  "globals": {
+    "DEBUG": false
+  },
+  "modulePaths": [
+    "node_modules",
+    "<rootDir>/app/"
+  ],
+  "snapshotSerializers": [
+    "enzyme-to-json/serializer"
+  ],
+
+  "setupFiles": [
+    "<rootDir>/build-configs/jest/setup-files/index"
+  ],
+  "coveragePathIgnorePatterns": [
+    "<rootDir>/node_modules/",
+    "<rootDir>/build-configs/"
+  ]
+}

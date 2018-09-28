@@ -1,0 +1,90 @@
+{
+    "presets": [
+        [
+            "@babel/env",
+            {
+                "modules": false,
+                "targets": {
+                    "browsers": [
+                        "IE >= 10",
+                        "Chrome >= 54",
+                        "Safari >= 9",
+                        "Firefox >= 50",
+                        "Opera >= 43",
+                        "last 2 versions"
+                    ]
+                }
+            }
+        ],
+        "@babel/react"
+    ],
+    "plugins": [
+        "@babel/plugin-transform-flow-comments",
+        "@babel/plugin-proposal-export-default-from",
+        "@babel/plugin-proposal-export-namespace-from",
+        [
+            "@babel/plugin-proposal-class-properties",
+            {
+                "loose": true
+            }
+        ],
+        [
+            "@babel/plugin-proposal-decorators",
+            {
+                "legacy": true
+            }
+        ],
+        [
+            "@babel/plugin-proposal-object-rest-spread",
+            {
+                "loose": true,
+                "useBuiltIns": true
+            }
+        ],
+        [
+            "@babel/transform-runtime",
+            {
+                "regenerator": false
+            }
+        ]
+    ],
+    "env": {
+        "test": {
+            "presets": [
+                [
+                    "@babel/env",
+                    {
+                        "targets": {
+                            "node": true
+                        },
+                        "modules": "commonjs"
+                    }
+                ]
+            ],
+            "plugins": [
+                [
+                    "styled-components",
+                    {
+                        "displayName": true,
+                        "fileName": false
+                    }
+                ]
+            ]
+        },
+        "development": {
+            "plugins": [
+                [
+                    "styled-components",
+                    {
+                        "displayName": true
+                    }
+                ]
+            ]
+        },
+        "production": {
+            "plugins": [
+                "transform-react-remove-prop-types"
+            ]
+        }
+    }
+}

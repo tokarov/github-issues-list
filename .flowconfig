@@ -1,0 +1,14 @@
+[options]
+esproposal.decorators=ignore
+module.system.node.resolve_dirname=node_modules
+module.ignore_non_literal_requires=true
+suppress_comment=\\(.\\|\n\\)*\\$FlowIgnore
+
+[ignore]
+.*/node_modules/.*
+
+[libs]
+flow-typed/
+
+[version]
+0.76.0
