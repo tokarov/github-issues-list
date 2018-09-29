@@ -1,0 +1,8 @@
+# Created by .ignore support plugin (hsz.mobi)
+.babelCache/
+.idea/
+.cache/*
+github-issues-list.iml
+node_modules/
+coverage/
+__snapshots__

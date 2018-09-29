@@ -4,20 +4,20 @@ import {Provider} from 'react-redux';
 import {ThemeProvider} from 'styled-components';
 
 import {Router} from 'react-router';
-import {createBrowserHistory} from 'history';
+import Login from 'components/login';
 import theme from 'styles/theme';
+import {history} from './history';
 import {appStore} from './store';
 import Routes from './routes';
 
-const history = createBrowserHistory();
 render(
     <Provider store={appStore}>
         <ThemeProvider theme={theme}>
-            <div>
-                <Router history={history}>
+            <Router history={history}>
+                <Login>
                     <Routes />
-                </Router>
-            </div>
+                </Login>
+            </Router>
         </ThemeProvider>
     </Provider>,
     document.getElementById('main')

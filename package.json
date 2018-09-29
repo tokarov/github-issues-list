@@ -9,6 +9,8 @@
   "scripts": {
     "start": "webpack-dev-server --history-api-fallback --port 8081 -p --content-base dist",
     "watch": "webpack --watch --progress",
+    "eslint": "eslint \"app/**/*.js\" \"app/**/*.jsx\" --cache --cache-location \"./.cache/\"",
+    "flow": "flow",
     "test": "jest --coverage",
     "test:watch": "npm run test -- --watch",
     "build": "NODE_ENV=production webpack -p --progress"
@@ -21,8 +23,8 @@
     "normalize.css": "7.0.0",
     "prop-types": "^15.6.2",
     "ramda": "^0.25.0",
-    "react": "^16.4.1",
-    "react-dom": "^16.4.1",
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2",
     "react-jss": "^8.6.1",
     "react-redux": "^5.0.7",
     "react-router": "^4.3.1",
@@ -65,8 +67,8 @@
     "babel-plugin-styled-components": "^1.5.1",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.13",
     "css-loader": "^1.0.0",
-    "enzyme": "3.3.0",
-    "enzyme-adapter-react-16": "1.1.1",
+    "enzyme": "^3.4.0",
+    "enzyme-adapter-react-16": "^1.2.0",
     "enzyme-to-json": "3.3.1",
     "eslint": "^5.1.0",
     "eslint-config-airbnb": "^17.0.0",
@@ -84,8 +86,9 @@
     "html-webpack-plugin": "^3.2.0",
     "jest": "22.4.3",
     "jest-cli": "22.4.3",
-    "jsdom": "^11.11.0",
+    "jsdom": "^11.6.0",
     "postcss-loader": "^2.1.6",
+    "pre-commit": "^1.2.2",
     "react-addons-test-utils": "^15.6.2",
     "size-limit": "^0.18.5",
     "style-loader": "^0.21.0",
@@ -109,11 +112,20 @@
     ],
     "coverageThreshold": {
       "global": {
-        "branches": 80,
-        "functions": 80,
-        "lines": 80,
-        "statements": 80
+        "branches": 1,
+        "functions": 1,
+        "lines": 1,
+        "statements": 1
       }
-    }
+    },
+    "testURL": "http://localhost:8081"
+  },
+  "pre-commit": {
+    "silent": true,
+    "run": [
+      "eslint",
+      "flow",
+      "test"
+    ]
   }
 }

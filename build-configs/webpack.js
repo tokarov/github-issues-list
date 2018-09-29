@@ -19,7 +19,7 @@ module.exports = {
             'redux',
             'reselect',
             'redux-thunk'
-        ],
+        ]
     },
     // devtool: 'cheap-module-source-map',
     devtool: 'eval',
@@ -31,7 +31,7 @@ module.exports = {
     },
     resolve: {
         modules: ['app', 'node_modules'],
-        extensions: ['.js', '.jsx']
+        extensions: ['.mjs', '.js', '.jsx']
     },
     module: {
         rules: [

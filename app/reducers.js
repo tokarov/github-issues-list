@@ -1,3 +1,4 @@
-import {reducer as issuesList} from './containers/issues-list';
+import {reducer as issuesList} from 'containers/issues-list/services/reducer';
 
-export {issuesList};
+const reducers = {issuesList};
+export default reducers;

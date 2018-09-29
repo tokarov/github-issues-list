@@ -24,5 +24,3 @@ global.navigator = {
 global.DEBUG = false;
 
 global.MouseEvent = window.MouseEvent;
-
-

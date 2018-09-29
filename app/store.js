@@ -1,10 +1,15 @@
-import {applyMiddleware, combineReducers, compose, createStore} from 'redux';
-import * as reducers from './reducers';
+import {
+    applyMiddleware,
+    combineReducers,
+    compose,
+    createStore
+} from 'redux';
 import thunkMiddleware from 'redux-thunk';
 import {routerMiddleware} from 'react-router-redux';
+import reducers from './reducers';
 
 
-const router = routerMiddleware(history);
+const router = routerMiddleware();
 /* eslint-disable no-underscore-dangle */
 const reduxLogger = window.__REDUX_DEVTOOLS_EXTENSION__
     ? window.__REDUX_DEVTOOLS_EXTENSION__({maxAge: 10})

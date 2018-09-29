@@ -1,4 +1,4 @@
-const JSDOM = require('jsdom').JSDOM;
+const {JSDOM} = require('jsdom');
 
 global.document = new JSDOM('');
 global.window = document.defaultView;

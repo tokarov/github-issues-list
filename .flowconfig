@@ -1,8 +1,11 @@
 [options]
 esproposal.decorators=ignore
 module.system.node.resolve_dirname=node_modules
+module.system.node.resolve_dirname=app
 module.ignore_non_literal_requires=true
 suppress_comment=\\(.\\|\n\\)*\\$FlowIgnore
+# github.com/facebook/flow/issues/5647
+module.name_mapper='^data/\(.*\)$' -> '<PROJECT_ROOT>/app/data/\1'
 
 [ignore]
 .*/node_modules/.*
