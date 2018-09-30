@@ -99,6 +99,7 @@
         "ignorePureComponents": true
       }
     ],
+    "object-curly-newline": "off",
     "react/prop-types": [
       "warn",
       {

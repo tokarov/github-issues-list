@@ -2,16 +2,35 @@
 
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
+import styled from 'styled-components';
+import {IS_LOADING} from 'data/constants';
 
 import {issuesListActions} from '../services/reducer';
-import type {IssuesType, PaginationType} from '../types';
 import Issue from '../components/Issue';
+import TableHeader from './table-header';
+import Pagination from './pagination';
+import type {IssueType} from '../types';
 
 type PropsTypes = {
     loadReactIssues: () => void,
-    pagination: PaginationType,
-    issues: IssuesType
+    issues: Array<IssueType>,
+    isLoading: boolean
 }
+
+const Content = styled.div`
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+`;
+
+const Table = styled.div`
+  border: 1px solid ${({theme}) => theme.colors.forLine};
+  width: 800px;
+   @media (max-width: 800px) {
+      width: 100%
+   }
+`;
 
 class IssuesList extends Component<PropsTypes, void> {
     componentDidMount() {
@@ -20,12 +39,16 @@ class IssuesList extends Component<PropsTypes, void> {
     }
 
     render() {
-        const {issues, pagination} = this.props;
+        const {issues, isLoading} = this.props;
         return (
-            <div>
-                {issues.map(issue => <Issue issue={issue} />)}
-                {pagination.size}
-            </div>
+            <Content>
+                <Table>
+                    <TableHeader />
+                    {isLoading && IS_LOADING}
+                    {issues.map((issue: IssueType) => <Issue issue={issue} />)}
+                </Table>
+                <Pagination />
+            </Content>
         );
     }
 }

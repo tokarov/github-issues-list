@@ -13,7 +13,7 @@ describe('Login', () => {
     });
 
     it('should match snapshot', () => {
-        wrapper = shallow(<Wrapper />);
+        wrapper = shallow(<Login />).dive();
         expect(wrapper).toMatchSnapshot();
     });
 

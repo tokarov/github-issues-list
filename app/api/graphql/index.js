@@ -1,7 +1,7 @@
 // @flow
 
 import axios from 'axios';
-import {history} from 'history';
+import {history} from 'browser-history';
 
 export const axiosGitHubGraphQL = (query: string) => {
     const client = axios.create({

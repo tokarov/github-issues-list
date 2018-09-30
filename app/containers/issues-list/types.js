@@ -12,11 +12,16 @@ export type IssueType = {
     url: string
 }
 
-export type IssuesType = Array<IssuesType>
-
 export type PaginationType = {
     hasNextPage: Boolean,
     hasPreviousPage: Boolean,
     size: number,
     totalCount: number,
+    endCursor: string,
+    startCursor: string,
+    offset: string
 }
+
+export type FilterType = {
+    states: Array<string>
+};

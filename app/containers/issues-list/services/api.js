@@ -2,12 +2,13 @@
 
 import {axiosGitHubGraphQL} from 'api/graphql';
 
-export const loadReactIssues = (size: number, filter: string) => {
+export const loadReactIssues = (size: number, filter: string, offset: string) => {
     const REACT_ISSUES = `{
             repository(owner: "facebook", name:"react") {
                 issues(
                     ${filter},
-                    last: ${size}
+                    last: ${size},
+                    ${offset}
                     ) {
                         nodes {
                             number
@@ -22,6 +23,8 @@ export const loadReactIssues = (size: number, filter: string) => {
                         }
                     
                     pageInfo {
+                        startCursor
+                        endCursor
                         hasNextPage
                         hasPreviousPage
                     }

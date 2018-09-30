@@ -11,7 +11,7 @@ const theme = {
         help: '#777777',
         black: '#262626',
         disabled: '#B9B9B9',
-        forLine: '#dcdcdc'
+        forLine: '#e1e4e8'
     }
 };
 
